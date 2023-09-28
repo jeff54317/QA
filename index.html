@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見Q&A</title>
+    <style>
+        /* 基本樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('1.jpg'); /* 使用名為"1.jpg"的圖像作為背景 */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat; /* 避免圖片重複 */
+            background-position: center center; /* 圖片居中對齊 */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* 透明背景以突出顯示文本 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* 問題樣式 */
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            color: #007BFF;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* 答案樣式 */
+        .answer {
+            display: none;
+            margin-top: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* 圖案樣式 */
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        /* 選單樣式 */
+        select {
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>常見Q&A</h1>
+
+        <!-- 選單 -->
+        <label for="categorySelect">類別:</label>
+        <select id="categorySelect" onchange="filterQuestions()">
+            <option value="category1">證券Ｑ＆Ａ</option>
+            <option value="category2">興櫃Ｑ＆Ａ</option>
+            <option value="category3">權證案例Ｑ＆Ａ</option>
+            <option value="category4">複委託Ｑ＆Ａ</option>
+            <option value="category5">軟體Ｑ＆Ａ</option>
+            <!-- 添加更多類別選項 -->
+        </select>
+
+        <!-- 證券Ｑ＆Ａ -->
+        <div class="category" id="category1">
+            <!-- 第一個Q&A -->
+            <div class="question" onclick="toggleAnswer('answer1')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ1:如遇股市突然休市，預約單是否自動順延？
+            </div>
+            <div class="answer" id="answer1">不會自動順延，所委託的預約單僅限於當日有效，隔日將會自動失效，您需重新掛單。</div>
+            
+            <div class="question" onclick="toggleAnswer('answer2')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ2:何謂市價交易？
+            </div>
+            <div class="answer" id="answer2">一般以漲停買進跌停賣出，即稱為市價交易。
+               (1) 一般市價交易均以漲停買進跌停賣出委託（但實際成交價格不一定為漲停價或跌停價，需視市場撮合價格而定）。
+               (2) 市價交易使用情況為欲即時買進或賣出某種股票，而不重視股票成交價格時為之；客戶若在意股票成交價格時，請以限價（限定價格）為之。（證交所營業細則第 79 條規定：證券經紀商接受委託買賣，以限價為之）</div>
+            
+           <div class="question" onclick="toggleAnswer('answer3')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ3:是否可以利用網路委託下單進行融資、融券交易及當日沖銷？
+            </div>
+            <div class="answer" id="answer3">您必須開立『信用帳戶』方可進行融資、融券交易，但因網路交易之特性，本公司網路當日沖銷之委託以【先進先出法則】沖銷。
+                您若欲指定沖銷或如有個股資券配額問題請連絡分公司您所屬營業員為您服務。</div>
+            
+            <div class="question" onclick="toggleAnswer('answer4')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ4:普通交易的委託時間？
+            </div>
+            <div class="answer" id="answer4">不前一交易日下午 1：35 至交易當日下午 1：30，可委託當天的交易。若您下隔日預約單請您務必於隔天交易日早上 8：35 後，查詢您所委託的資料是否因價格錯誤或其他不正確之原因，而無法傳輸或委託成功，若有疑問可洽詢所屬營業員或客服人員。</div>
+            
+            <div class="question" onclick="toggleAnswer('answer5')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ5:盤後交易的委託時間？
+            </div>
+            <div class="answer" id="answer5">前一交易日下午 2：40 至交易當日下午 2：30，可委託當天的交易。若您下隔日預約單請您務必於隔天交易日下午 2：05 後，查詢您所委託的資料是否因價格錯誤或其他不正確之原因，而無法傳輸或委託成功，若有疑問可洽詢所屬營業員或客服人員。</div>
+            
+             <div class="question" onclick="toggleAnswer('answer6')">
+                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                 Ｑ6:零股交易的委託時間？
+             </div>
+             <div class="answer" id="answer6">前一交易日下午 2：40 至交易當日下午 2：30，可委託當天的交易。若您下隔日預約單請您務必於隔天交易日下午 1：45 後，查詢您所委託的資料是否因價格錯誤或其他不正確之原因，而無法傳輸或委託成功，若有疑問可洽詢所屬營業員或客服人員。</div>
+             
+            <div class="question" onclick="toggleAnswer('answer7')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ7:電子下單股票有無買賣限制？
+            </div>
+            <div class="answer" id="answer7">目前電子下單普通早盤交易及盤後交易不開放買賣全額交割股。零股交易不開放買賣警示股、全額交割股，若需要委託之客戶請 洽所屬營業員下單。</div>
+            
+            <div class="question" onclick="toggleAnswer('answer8')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ8:電子交易單筆委託金額是否有限制？
+            </div>
+            <div class="answer" id="answer8">目前單筆委託金額最高為 1,000 萬元，若超額系統會阻擋。若常有單筆超過 1,000 萬之委託請洽詢所屬營業員申請。</div>
+            
+             <div class="question" onclick="toggleAnswer('answer9')">
+                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                 Ｑ9:電子交易委託認購權證是否有限制？
+             </div>
+             <div class="answer" id="answer9">有，單筆限制 100 張以下、多筆累積限制 100 張以下。若需委託超過 100 張以上之認購權證單，請洽詢所屬營業員下單。</div>
+             
+             <div class="question" onclick="toggleAnswer('answer10')">
+                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                 Ｑ10:如何申請電子對帳單？
+             </div>
+             <div class="answer" id="answer10">攜帶原開戶印章及身分證至原開戶分公司或至簽署【電子郵件寄送對帳單同意書】，簽署完成後自行進入大昌網頁申請電子憑證（申請時所填具之電子郵件信箱地址，請務必填寫可使用 Outlook 接收之電子郵件信箱地址，儘量避免為免費信箱因部分信箱如：yahoo、hotmail、Pchome 無法接收此類型郵件），申請完成後即可至指定電子郵件信箱地址接收電子對帳單。或大昌官網登入金融交易平台 → 【電子同意書】 → 簽署【電子郵件寄送對帳單同意書】。</div>
+             
+             <div class="question" onclick="toggleAnswer('answer11')">
+                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                 Ｑ11:申請電子對帳單的應注意事項？
+             </div>
+             <div class="answer" id="answer11">需於大昌證券開立電子戶，取得網路認證機構電子簽章 (證券或期貨憑證皆可) 及擁有有效的電子郵件信箱，才可申請電子對帳單。(為確保電子對帳單成功傳送，請您使用常用及有效電子信箱，避免使用免費或服務不穩定的電子信箱，以免收不到電子對帳單。)</div>
+             
+            <div class="question" onclick="toggleAnswer('answer12')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ12:網路變更客戶基本資料的應注意事項？
+            </div>
+            <div class="answer" id="answer12">需於大昌證券開立電子戶，取得網路認證機構電子簽章 (證券或期貨憑證皆可) 及簽署[變更保管劃撥帳戶資料同意書]。(為確保電子對帳單成功傳送，請您使用常用及有效電子信箱，避免使用免費或服務不穩定的電子信箱，以免收不到電子對帳單。)</div>
+            
+            <div class="question" onclick="toggleAnswer('answer13')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ13:電子下單最低手續費是如何計算？
+            </div>
+            <div class="answer" id="answer13">手續費是以您每筆委託之實際成交筆數來計算，而非委託筆數。電子式下單手續費折扣後，最低手續費為 15 元（手續費折扣後金額，元以下進位至元，若未滿 15 元，均以 15 元計收）。</div>
+            
+
+            <!-- 添加更多的Q&A -->
+        </div>
+
+        <!-- 興櫃Ｑ＆Ａ -->
+        <div class="category" id="category2" style="display:none;">
+            <!-- 第一個Q&A -->
+            <div class="question" onclick="toggleAnswer('answer2-1')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ1:什麼是興櫃股票？
+            </div>
+            <div class="answer" id="answer2-1">興櫃股票，就是指已經申報上市 ( 櫃 ) 輔導契約 之公開發行公司的普通股股票，在還沒有上市 ( 櫃 ) 掛牌之前，經過櫃檯中心依據相關規定核准，先在證券商營業處所議價買賣者而言 。興櫃股票未來不必然會上市 ( 櫃 ) 成功，要看興櫃公司將來能否符合上市 ( 櫃 ) 的掛牌條件而定，應特別注意。  </div>
+            
+            <div class="question" onclick="toggleAnswer('answer2-2')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ2:申請為興櫃股票的發行公司須符合哪些條件？
+            </div>
+            <div class="answer" id="answer2-2">申請為興櫃股票之公司，並無營業利益、稅前純益等獲利能力之要求，也沒有資本額、設立年限、股東人數之規定，只須符合下列條件:<br>
+                                               (一) 已經申報上市 ( 櫃 ) 輔導。<br>
+                                               (二) 經二家以上證券商書面推薦並檢送最近一個月對該公司之「財務業務重大事件檢查表」。<br>
+                                               (三) 在櫃檯中心所在地設有符合規定條件之專業股務代理機構或股務單位辦理股務。<br>
+                                               (四) 募集發行之股票及債券，皆應為全面無實體發行。  </div>
+          
+            <div class="question" onclick="toggleAnswer('answer2-3')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ3:我可以從哪裡取得興櫃股票發行公司的資訊？資訊的內容有哪些？
+            </div>
+            <div class="answer" id="answer2-3">興櫃股票發行公司的資訊可區分為「登錄交易前」與「登錄交易後」兩大類：<br>
+                                              (一) 登錄交易前：<br>
+　　                                             1. 發行公司向櫃檯中心提出登錄申請時，必須將公開說明書揭露於公開資訊觀測站（網址為：http://mops.tse.com.tw）。 <br>
+　　                                             2. 經櫃檯中心審核完畢後，將公司概況資料，包括股票代號、公司名稱、董事長、總經理、實收資本額、主要營業項目、主要產品、最近五年簡明損益表、最近五年簡明資產負債表等資料，於櫃檯中心網站之興櫃股票項目 ( 網址為：http://www.gretai.org.tw ) 向大眾揭示五個營業日，在第六個營業日就可以開始報價交易。<br>
+                                              (二) 登錄交易後 : 公司登錄交易後，投資人可以從櫃檯中心網站 ( 網址為：http://www.gretai.org.tw ) 之「公開資訊觀測站」項下或推薦證券商提供的適當管道或蕃薯藤網站股市專區，取得以下資訊：<br>
+                                                1. 財務報告：一般興櫃公司應公開經會計師查核簽證之年度財務報告、半年度財務報告、已申請上市(櫃)作業中之興櫃公司之財務報告季報表。<br>
+                                                2. 每月營運情形：應揭露每月營業額、背書保證金額、資金貸放金額及衍生性商品交易等資訊。<br>
+                                                3. 重大訊息：公司若發生本中心證券商營業處所買賣興櫃股票審查準則第二十八條第一項各款情事，就必須於事實發生或傳播媒體報導日的次一營業日交易時間開始前公開。<br>
+                                                4. 重大訊息說明記者會：公司發生本中心證券商營業處所買賣有價證券審查準則第 28 條之 1 第 1 項各款情事，就必須指派發言人或代理發言人於事實發生或傳播媒體報導之次一營業日前至本中心參加記者會提出說明。  </div>
+             
+             <div class="question" onclick="toggleAnswer('answer2-4')">
+                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                 Ｑ4:哪些情形下會終止該興櫃股票的櫃檯買賣？
+             </div>
+             <div class="answer" id="answer2-4">符合以下條件之一，櫃檯中心將終止此一興櫃股票的櫃檯買賣：<br>
+                                                (一) 股票已上市或上櫃掛牌者。<br>
+                                                (二) 股票經依規定暫停交易達三個月，其暫停交易原因仍未消滅者。<br>
+                                                (三) 撤銷輔導股票上市、上櫃契約或已無推薦證券商推薦者。<br>
+                                                (四) 經法院裁定宣告破產、准予重整確定者或駁回重整之聲請確定者。<br>
+                                                (五) 有公司法相關規定情事或其他原因，經有關主管機關撤銷公司登記或予以解散者。<br>
+                                                (六) 有公司法第二百五十一條或第二百七十一條規定情事或其他原因經主管機關撤銷其核准者。  </div>
+             
+            <div class="question" onclick="toggleAnswer('answer2-5')">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                Ｑ5:哪些情形下會暫停該興櫃股票的櫃檯買賣？
+            </div>
+            <div class="answer" id="answer2-5">符合以下條件之一，櫃檯中心將暫停此一興櫃股票的櫃檯買賣：<br>
+                                               (一) 僅餘一家推薦證券商推薦者。<br>
+                                               (二) 推薦證券商雖有二家以上，惟皆未與發行人訂有輔導股票上市或上櫃契約者。<br>
+                                               (三) 發行公司未依證券交易法規定時間揭露年度或半年度財務報告者。<br>
+                                               (四) 未依規定公開重大訊息，且未於限期內改善者。<br>
+                                               (五) 未依規定設有股務單位或辦理股務，且未於限期內改善者。<br>
+                                               (六) 有公司法第二百八十二條之情事，經法院依公司法第二百八十七條第一項第五款規定對其股票為禁止轉讓之裁定者。  </div>
+            
+            
+            
+            
+            
+            
+            
+            
+          
+            <!-- 添加更多的Q&A -->
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(answerId) {
+            var answer = document.getElementById(answerId);
+
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+
+        function filterQuestions() {
+            var categorySelect = document.getElementById("categorySelect");
+            var selectedCategory = categorySelect.value; // 獲取所選類別
+
+            var categories = document.querySelectorAll(".category"); // 獲取所有類別
+
+            categories.forEach(function(category) {
+                var categoryID = category.id;
+
+                if (selectedCategory === "all" || categoryID === selectedCategory) {
+                    category.style.display = "block"; // 顯示符合選項的類別
+                } else {
+                    category.style.display = "none"; // 隱藏不符合選項的類別
+                }
+            });
+        }
+    </script>
+</body>
+</html>
